@@ -12,7 +12,7 @@ parse = require("hackparse",['r','o']) // Optional r,o 是布尔参数
 console.log(parse(process.argv.slice(2)))
 ```
 ___
-Size：如你所见，总共不到 4k ，`README.md` 和 `package.json` 是主程序的两倍...
+Size：如你所见，总共 4k ，`README.md` 和 `package.json` 是主程序的两倍多...
 
 它能实现**绝大部分**的参数解析需求，还加入了**布尔参数**支持（应该是全网唯一了吧）  
 具体就是你可以设定例如 `-r` 为 `Boolean`,  
@@ -33,19 +33,19 @@ ___
 ### 不同之处：  
 1. 不会将空参数 `-` `--` 忽略，它们会被解析成 `''`
 2. 只有 BSD 风格参数才会添加到 `_:` key，它们对我而言是有用的
-3. 相同的key，后面的 val 会替换前面的，而不会解析成数组。我会马上修改
 
 附
 
-    Unix 风格：参数key 以「-」（连字符）开头
-    GNU 风格：参数key 以「--」（双连字符）开头
+    Unix 风格：参数key 以「-」开头
+    GNU 风格：参数key 以「--」开头
     BSD 风格：参数key 以空格分割
 ___
 
 解析的是 Linux 参数，明天设计一下 Win 风格的
 
-欢迎大家使用！[提出建议](mailto:admin@cure-x.net)（ issue 和 PR 还没有，因为我还没发布git...
+欢迎大家使用！[我的邮箱](mailto:admin@cure-x.net)
 
+Git 仓库在右边，望多多提 issues 和 PR ！！！  
 由于到最后思路乱了，只能靠打补丁，所以可能很多 bug，我自己也发现一些 ,,ԾㅂԾ,,  
 所以望大佬们多多提出！
 ___
