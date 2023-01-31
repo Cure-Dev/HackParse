@@ -1,0 +1,15 @@
+{
+  "name": "hackparse",
+  "version": "1.1.3",
+  "description": "A Parsing Tool For HackRename",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "argv",
+    "parse"
+  ],
+  "author": "Cure-X",
+  "license": "MIT"
+}
