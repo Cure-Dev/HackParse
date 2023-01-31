@@ -1,0 +1,24 @@
+{
+  "name": "hackparse",
+  "version": "2.0.0",
+  "description": "minimize parsing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "argv",
+    "parse",
+    "hackparse"
+  ],
+  "author": "Cure-X",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cure-Dev/HackParse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cure-Dev/HackParse/issues"
+  },
+  "homepage": "https://dev.cure-x.net/hackparse/"
+}
