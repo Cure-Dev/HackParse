@@ -1,5 +1,11 @@
 module.exports = function parse(args,bool=[]){
     const parsed = { _:[] }
+    function add(k, v) {
+        if (parsed[k])
+            parsed[k] = [ parsed[k], v ]
+        else
+            parsed[k] = v
+    }
 
     for(let i=0; i<args.length; i++){
 
@@ -8,11 +14,11 @@ module.exports = function parse(args,bool=[]){
             let equal = arg.indexOf('=')
 
             if (equal != -1 && !bool.includes(arg.slice(0,equal)))
-                parsed[arg.slice(0,equal)] = arg.slice(equal+1)
+                add(arg.slice(0,equal), arg.slice(equal+1))
             else if (args[i+1] != undefined && args[i+1][0] != '-' && !bool.includes(arg))
-                parsed[arg] = args[++i] //这里真的很巧妙
+                add(arg, args[++i]) //这里真的很巧妙
             else
-                parsed[arg] = true
+                add(arg, true)
         }
         
         else if (args[i][0] == '-'){
@@ -23,11 +29,11 @@ module.exports = function parse(args,bool=[]){
                         parsed[arg[j]] = true
             
             if (equal != -1 && !bool.includes(arg[equal-1]))
-                parsed[arg[equal-1]] = arg.slice(equal+1)
+                add(arg[equal-1], arg.slice(equal+1))
             else if (args[i+1] != undefined && args[i+1][0] != '-' && !bool.includes(arg.slice(-1)))
-                parsed[arg.slice(-1)] = args[++i]
+                add(arg.slice(-1), args[++i])
             else
-                parsed[arg.slice(-1)] = true
+                add(arg.slice(-1), true)
         }
 
         else
